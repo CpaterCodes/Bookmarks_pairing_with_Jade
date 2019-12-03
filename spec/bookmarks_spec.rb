@@ -6,8 +6,8 @@ describe Bookmarks do
     it "should display all my bookmarks" do
       bookmarks = Bookmarks.all
       
-      expect(bookmarks).to include("https://github.com")
-      expect(bookmarks).to include("https://google.com")
+      expect(bookmarks).to include("http://makersacademy.com")
+      expect(bookmarks).to include("http://google.com")
     end
   end
 
