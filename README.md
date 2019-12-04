@@ -8,7 +8,11 @@ In this project we will build a bookmark manager where we can maintain a collect
 
 As a User  
 So I can keep track of interesting stuff  
-I want to be able to see a list of bookmarks  
+I want to be able to see a list of bookmarks
+
+As a User
+So I can record sites of interest
+I want to be able to add a bookmark to my list of bookmarks  
 
 LIST | BOOKMARK
 ----- | --------

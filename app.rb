@@ -7,9 +7,18 @@ class Bookmark < Sinatra::Base
     erb :index
   end
 
-  get '/bookmark_list' do
+  get '/bookmark/list' do
     @list = Bookmarks.all
-    erb :bookmark_list
+    erb :'bookmark/list'
+  end
+
+  get '/bookmark/add' do
+    erb :'bookmark/add'
+  end
+
+  post '/bookmark/add' do
+    Bookmarks.add(params['new_bookmark'])
+    redirect '/bookmark/list'
   end
 
   run! if app_file == $0

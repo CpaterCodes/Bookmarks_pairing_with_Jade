@@ -3,11 +3,10 @@ feature "Bookmarks" do
   scenario "shows my bookmarks" do
     test_database_setup
 
-    table = PG.connect(dbname: 'test_database')
-
-    table.exec("INSERT INTO bookmarks(url)
-    VALUES('http://destroyallsoftware.com'),('http://google.com'),
-    ('http://youtube.com'),('http://makersacademy.com');")
+    Bookmarks.add('http://destroyallsoftware.com')
+    Bookmarks.add('http://google.com')
+    Bookmarks.add('http://youtube.com')
+    Bookmarks.add('http://makersacademy.com')
 
     visit '/'
     click_on "See Bookmarks"
