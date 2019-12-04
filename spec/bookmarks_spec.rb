@@ -6,16 +6,16 @@ describe Bookmarks do
     it "should display all my bookmarks" do
       test_database_setup
 
-      Bookmarks.add('http://destroyallsoftware.com')
-      Bookmarks.add('http://google.com')
-      Bookmarks.add('http://youtube.com')
-      Bookmarks.add('http://makersacademy.com')
+      Bookmarks.add(url: 'http://destroyallsoftware.com', title: 'Destroy all Software')
+      Bookmarks.add(url: 'http://google.com', title: 'Google')
+      Bookmarks.add(url: 'http://youtube.com', title: 'Youtube')
+      Bookmarks.add(url: 'http://makersacademy.com', title: 'Makers')
 
       bookmarks = Bookmarks.all
 
-      expect(bookmarks).to include("http://makersacademy.com")
-      expect(bookmarks).to include("http://google.com")
-      expect(bookmarks).to include("http://youtube.com")
+      expect(bookmarks[3].title).to include("Makers")
+      expect(bookmarks[1].title).to include("Google")
+      expect(bookmarks[2].title).to include("Youtube")
     end
   end
 
@@ -23,9 +23,9 @@ describe Bookmarks do
     it "adds a bookmark to the database of bookmarks" do
       test_database_setup
 
-      Bookmarks.add('www.zetcode.com')
+      Bookmarks.add(url: 'www.zetcode.com', title: 'ZetCode')
 
-      expect(Bookmarks.all).to include("www.zetcode.com")
+      expect(Bookmarks.all[0].title).to include("ZetCode")
     end
   end
 
