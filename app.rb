@@ -9,6 +9,7 @@ class Bookmark < Sinatra::Base
 
   get '/bookmark/list' do
     @list = Bookmarks.all
+    p @list
     erb :'bookmark/list'
   end
 

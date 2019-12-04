@@ -1,4 +1,5 @@
 require 'pg'
+# require 'lapis_lazuli'
 
 class Bookmarks
   attr_reader :id, :title, :url
@@ -24,7 +25,7 @@ class Bookmarks
   end
 
   def self.add(url:, title:)
-
+    # raise false unless is_url?(url)
     if ENV['RACK_ENV'] == 'test'
       connection = PG.connect(dbname: 'test_database')
     else

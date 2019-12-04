@@ -23,10 +23,16 @@ describe Bookmarks do
     it "adds a bookmark to the database of bookmarks" do
       test_database_setup
 
-      Bookmarks.add(url: 'www.zetcode.com', title: 'ZetCode')
+      Bookmarks.add(url: 'http://www.zetcode.com', title: 'ZetCode')
 
       expect(Bookmarks.all[0].title).to include("ZetCode")
     end
+
+    # it "raises an error if given an invalid url" do
+    #   test_database_setup
+    #
+    #   expect{ Bookmarks.add(url: 'ted', title: 'ZetCode') }.to raise_error false
+    # end
   end
 
 end
