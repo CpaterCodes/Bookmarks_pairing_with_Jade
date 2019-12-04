@@ -3,8 +3,8 @@ require 'pg'
 class Bookmarks
 
   def self.all
-    
-    if ENV['ENVIRONMENT'] == 'test'
+
+    if ENV['RACK_ENV'] == 'test'
       connection = PG.connect(dbname: 'test_database')
     else
       connection = PG.connect(dbname: 'bookmark_manager')
@@ -14,7 +14,7 @@ class Bookmarks
     database.map { |bookmark|
       bookmark['url']
     }
-    
+
   end
 
 end
